@@ -1,0 +1,40 @@
+.post {
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+
+  h3 {
+    margin: 0 0 10px;
+
+    a {
+      color: $dark-font;
+    }
+
+    :hover {
+      color: $mid-font;
+    }
+  }
+
+  .tags {
+    margin: 15px 0 20px;
+  }
+
+  .tags .tag:not( :last-child ) {
+    margin-right: 5px;
+  }
+
+  .tag {
+    display: inline-block;
+    background: $primary-color;
+    color: #333;
+    border-radius: 3px;
+    padding: 2px 6px;
+    text-decoration: none;
+  }
+
+  .tag:hover {
+    background: $secondary-color;
+    color: #fff;
+  }
+}

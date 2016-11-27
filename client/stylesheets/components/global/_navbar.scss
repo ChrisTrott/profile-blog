@@ -1,0 +1,21 @@
+.navbar, .navbar-brand, .navbar-default {
+  background-color: $secondary-color;
+  opacity: 0.9;
+
+  a {
+    opacity: 1.0;
+    color: $light-font !important;
+  }
+
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom-color: $primary-color;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+}
