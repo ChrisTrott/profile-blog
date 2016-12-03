@@ -2,9 +2,14 @@
   background-color: $secondary-color;
   opacity: 0.9;
 
-  a {
+  a, .fa {
     opacity: 1.0;
     color: $light-font !important;
+
+    &:hover {
+      color: $primary-color !important;
+      background-color: $dark-font !important;
+    }
   }
 
 }

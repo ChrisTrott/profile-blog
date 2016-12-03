@@ -4,8 +4,23 @@ PublicNavigation = React.createClass({
     return {
       items: {
         right: [
+          /*{
+            uid: 'login', href: '/login', class: 'fa fa-login', label: ''
+          },
           {
-            uid: 'login', href: '/login', label: 'Log In'
+            uid: 'facebook', href: 'https://facebook.com/christrott86', class: 'fa fa-facebook', label: ''
+          },*/
+          {
+            uid: 'twitter', href: 'https://twitter.com/VioKyma', class: 'fa fa-twitter', label: ''
+          },
+          {
+            uid: 'linkedin', href: 'https://www.linkedin.com/in/christopher-trott-39345119', class: 'fa fa-linkedin', label: ''
+          },
+          {
+            uid: 'stackoverflow', href: 'https://stackoverflow.com/users/1881027/viokyma', class: 'fa fa-stack-overflow', label: ''
+          },
+          {
+            uid: 'github', href: 'https://github.com/VioKyma', class: 'fa fa-github', label: ''
           }
         ]
       }

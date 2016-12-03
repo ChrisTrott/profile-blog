@@ -2,7 +2,7 @@ let administrators = [
   {
     name: { first: 'Chris', last: 'Trott' },
     email: 'christrott86@gmail.com',
-    password: 'password'
+    password: process.env.ADMIN_PASSWORD
   },
 ];
 
@@ -12,7 +12,6 @@ let generateAccounts = () => {
 
   if ( !usersExist ) {
     _createUsers( administrators );
-    _createUsers( _generateFakeUsers( fakeUserCount ) );
   }
 };
 
@@ -44,20 +43,6 @@ let _createUser = ( user ) => {
       name: user.name
     }
   });
-};
-
-let _generateFakeUsers = ( count ) => {
-  let users = [];
-
-  for ( let i = 0; i < count; i++ ) {
-    users.push({
-      name: { first: faker.name.firstName(), last: faker.name.lastName() },
-      email: faker.internet.email(),
-      password: 'password'
-    });
-  }
-
-  return users;
 };
 
 Modules.server.generateAccounts = generateAccounts;

@@ -5,7 +5,11 @@
 .jumbotron.blog-header,
 .jumbotron.tags-header {
   padding: 30px !important;
-  background-color: $primary-color;
+  color: $light-font;
+  background-color: $secondary-color;
+  border-style: solid;
+  border-color: $primary-color;
+  border-width: 5px 0 0 0;
 
   h2 {
     margin-top: 0px;
@@ -31,7 +35,7 @@
 }
 
 .banner-head {
-  height: 300px;
+  height: 400px;
   background-image: url('/Coffee.jpg');
   background-size: cover;
   background-position: center;

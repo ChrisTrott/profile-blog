@@ -11,7 +11,7 @@ NavBarNav = React.createClass({
   renderItem( item, index ) {
     let active = item.active ? 'active' : '';
     return <li key={ `nav-item-${ item.uid }` } className={ active }>
-      <a href={ item.href }>{ item.label }</a>
+      <a href={ item.href } className={ item.class }>{ item.label }</a>
     </li>;
   },
   render() {
