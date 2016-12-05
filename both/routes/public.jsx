@@ -9,6 +9,13 @@ publicRoutes.route( '/', {
   }
 });
 
+publicRoutes.route( '/about', {
+  name: 'about',
+  action() {
+    ReactLayout.render( App, { yield: <About /> });
+  }
+});
+
 publicRoutes.route( '/posts/:slug', {
   name: 'singlePost',
   action( params ) {

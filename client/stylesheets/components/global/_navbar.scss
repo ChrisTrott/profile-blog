@@ -24,3 +24,8 @@
   border-bottom-style: solid;
   border-bottom-width: 5px;
 }
+
+.navbar-toggle, .icon-bar {
+  background-color: $secondary-color;
+  color: $light-font !important;
+}

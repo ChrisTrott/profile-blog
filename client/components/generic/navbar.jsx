@@ -1,6 +1,6 @@
 NavBar = React.createClass({
   render() {
-    return <nav className="navbar navbar-default" role="navigation">
+    return <nav className="navbar navbar-fixed-top" role="navigation">
       <div className="container">
         <div className="navbar-header">
           <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target={ `#navbar-${ this.props.id }` }>

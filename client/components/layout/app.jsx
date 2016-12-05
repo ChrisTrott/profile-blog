@@ -7,6 +7,7 @@ App = React.createClass({
       isPublic( route ) {
         return [
           'index',
+          'about',
           'singlePost',
           'tagIndex',
           'login',
