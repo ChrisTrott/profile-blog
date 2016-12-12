@@ -40,5 +40,6 @@ standard-minifier-js@1.2.1
 shell-server@0.2.1
 email
 fortawesome:fontawesome
+okgrow:analytics
 
 #spiderable

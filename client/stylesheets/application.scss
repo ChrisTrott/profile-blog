@@ -3,7 +3,7 @@ $primary-color: #B6A184;
 $secondary-color: #2D2D2D;
 $dark-font: #3B4850;
 $mid-font: #3E6666;
-$light-font: #E5F1EF;
+$light-font: #F5F5F5;
 
 @import "tools/extends";
 
@@ -19,3 +19,4 @@ $light-font: #E5F1EF;
 
 @import "components/views/login";
 @import "components/views/editor";
+@import "components/views/about";

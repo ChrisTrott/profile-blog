@@ -2,6 +2,10 @@
   background-color: $secondary-color;
   opacity: 0.9;
 
+  .active {
+    background-color: $mid-font;
+  }
+
   a, .fa {
     opacity: 1.0;
     color: $light-font !important;
@@ -25,7 +29,10 @@
   border-bottom-width: 5px;
 }
 
-.navbar-toggle, .icon-bar {
+.navbar-toggle {
   background-color: $secondary-color;
-  color: $light-font !important;
+}
+
+.icon-bar {
+  background-color: $light-font;
 }

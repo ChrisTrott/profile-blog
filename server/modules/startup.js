@@ -6,7 +6,7 @@ let startup = () => {
 
 var _setEnvironmentVariables = () => Modules.server.setEnvironmentVariables();
 
-var _setBrowserPolicies = () => {};
+var _setBrowserPolicies = () => Modules.server.setupCSP();
 
 var _generateAccounts = () => Modules.server.generateAccounts();
 
