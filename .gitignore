@@ -2,3 +2,4 @@
 settings-production.json
 npm-debug.log
 public/Originals
+node_modules/

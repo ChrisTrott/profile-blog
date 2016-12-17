@@ -4,12 +4,6 @@ PublicNavigation = React.createClass({
     return {
       items: {
         right: [
-          /*{
-            uid: 'login', href: '/login', class: 'fa fa-login', label: ''
-          },
-          {
-            uid: 'facebook', href: 'https://facebook.com/christrott86', class: 'fa fa-facebook', label: ''
-          },*/
           {
             uid: 'twitter', href: 'https://twitter.com/VioKyma', class: 'fa fa-twitter', label: ''
           },
@@ -22,12 +16,24 @@ PublicNavigation = React.createClass({
           {
             uid: 'github', href: 'https://github.com/VioKyma', class: 'fa fa-github', label: ''
           }
+        ],
+        left: [
+          {
+            uid: 'blog', href: '/blog', class: '', label: 'Blog'
+          },
+          {
+            uid: 'portfolio', href: '/portfolio', class: '', label: 'Portfolio'
+          },
+          {
+            uid: 'about', href: '/about', class: '', label: 'About Me'
+          }
         ]
       }
     };
   },
   render() {
     return <div className="public-navigation">
+      <NavBarNav position={ `navbar-left` } items={ this.data.items.left } />
       <NavBarNav position={ `navbar-right` } items={ this.data.items.right } />
     </div>;
   }

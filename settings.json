@@ -1,17 +1,7 @@
 {
   "public": {
     "analyticsSettings": {
-      "Google Analytics" : {"trackingId": "UA-88743102-1"},
-      "Amplitude"        : {"apiKey": "..."},
-      "Chartbeat"        : {"uid": "..."},
-      "comScore"         : {"c2": "..."},
-      "HubSpot"          : {"portalId": "..."},
-      "Intercom"         : {"appId": "..."},
-      "Keen IO"          : {"projectId": "...", "writeKey": "..."},
-      "KISSmetrics"      : {"apiKey": "..."},
-      "Mixpanel"         : {"token":  "...", "people": true},
-      "Quantcast"        : {"pCode": "..."},
-      "Segment.io"       : {"apiKey": "..."}
+      "Google Analytics" : {"trackingId": "Some-Tracking-Id"},
     }
   }
 }

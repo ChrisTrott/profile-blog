@@ -7,7 +7,9 @@ App = React.createClass({
       isPublic( route ) {
         return [
           'index',
+          'blog',
           'about',
+          'portfolio',
           'singlePost',
           'tagIndex',
           'login',
@@ -29,8 +31,8 @@ App = React.createClass({
     } else {
       return <Jumbotron className="blog-header">
           <h2>Chris Trott</h2>
-          <h4>I'm the Product Manager at a SaaS company where I manage,
-            develop, deploy, and maintain web applications.</h4>
+          <h4>Hi I'm Chris! I'm the Product Manager at a SaaS company where I
+            manage, develop, deploy, and maintain web applications.</h4>
           <h4>
             I enjoy teaching people about technology, and love producing
             beautiful software that improves people's lives.

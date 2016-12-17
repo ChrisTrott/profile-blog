@@ -1,11 +1,11 @@
 Post = React.createClass({
   getPostTitle() {
     let post = this.props.post;
-    
+
     if ( this.props.singlePost ) {
       return <h3>{ post.title }</h3>;
     } else {
-      return <h3><a href={ `/posts/${ post.slug }`}>{ post.title }</a></h3>;
+      return <h3><a href={ `/blog/${ post.slug }`}>{ post.title }</a></h3>;
     }
   },
   getHTML( markdown ) {

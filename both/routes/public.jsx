@@ -5,6 +5,13 @@ const publicRoutes = FlowRouter.group({
 publicRoutes.route( '/', {
   name: 'index',
   action() {
+    ReactLayout.render( App, { yield: <Home /> } );
+  }
+});
+
+publicRoutes.route( '/blog', {
+  name: 'blog',
+  action() {
     ReactLayout.render( App, { yield: <PostsIndex /> } );
   }
 });
@@ -12,11 +19,18 @@ publicRoutes.route( '/', {
 publicRoutes.route( '/about', {
   name: 'about',
   action() {
-    ReactLayout.render( App, { yield: <About /> });
+    ReactLayout.render( App, { yield: <About /> } );
   }
 });
 
-publicRoutes.route( '/posts/:slug', {
+publicRoutes.route( '/portfolio', {
+  name: 'portfolio',
+  action() {
+    ReactLayout.render( App, { yield: <Portfolio /> } );
+  }
+});
+
+publicRoutes.route( '/blog/:slug', {
   name: 'singlePost',
   action( params ) {
     ReactLayout.render( App, { yield: <SinglePost slug={ params.slug } /> } );

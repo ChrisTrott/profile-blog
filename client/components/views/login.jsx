@@ -18,7 +18,7 @@ Login = React.createClass({
           email: 'Is this email address legit?'
         },
         password: {
-          required: 'Need a password here.'
+          required: 'You need to enter a password.'
         }
       },
       submitHandler() {
