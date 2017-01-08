@@ -3,9 +3,9 @@ Post = React.createClass({
     let post = this.props.post;
 
     if ( this.props.singlePost ) {
-      return <h3>{ post.title }</h3>;
+      return <div className="panel-heading"><h3>{ post.title }</h3></div>;
     } else {
-      return <h3><a href={ `/blog/${ post.slug }`}>{ post.title }</a></h3>;
+      return <div className="panel-heading"><h3><a href={ `/blog/${ post.slug }`}>{ post.title }</a></h3></div>;
     }
   },
   getHTML( markdown ) {
@@ -17,7 +17,7 @@ Post = React.createClass({
     if ( tags ) {
       return <div className="tags">
         {tags.map( ( tag ) => {
-          return <a className="tag" href={ `/tags/${ tag }` }>#{ tag }</a>;
+          return <a className="tag" href={ `/tags/${ tag }` }>{ tag }</a>;
         })}
       </div>;
     }
@@ -26,11 +26,13 @@ Post = React.createClass({
     let { formatLastUpdate } = ReactHelpers,
         post                 = this.props.post;
 
-    return <div className="post">
+    return <div className="post panel panel-primary">
       { this.getPostTitle() }
-      <p><strong>Last Updated:</strong> { formatLastUpdate( post.updated ) } by { post.author }</p>
-      { this.renderTags( post.tags ) }
-      <div className="post-body" dangerouslySetInnerHTML={ this.getHTML( post.content ) } />
+      <div className="panel-body">
+        <span className="post-date">{ formatLastUpdate( post.updated ) }</span><span className="post-author"> by { post.author }</span>
+        { this.renderTags( post.tags ) }
+        <div className="post-body" dangerouslySetInnerHTML={ this.getHTML( post.content ) } />
+      </div>
     </div>;
   }
 });

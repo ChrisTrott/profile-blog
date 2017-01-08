@@ -10,7 +10,7 @@ ReactHelpers = {
   },
   formatLastUpdate( date ) {
     if ( date ) {
-      return moment( date ).format( 'MMMM Do, YYYY hh:mm a' );
+      return moment( date ).format( 'Do MMM YY' );
     }
   }
 };
