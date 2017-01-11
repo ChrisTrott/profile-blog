@@ -46,7 +46,7 @@ let PostsSchema = new SimpleSchema({
   },
   "slug": {
     type: String,
-    label: "The slug for this post.",
+    label: "The slug for this project.",
     autoValue() {
       let slug              = this.value,
           existingSlugCount = Posts.find( { _id: { $ne: this.docId }, slug: new RegExp( slug ) } ).count(),

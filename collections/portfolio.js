@@ -24,7 +24,7 @@ let ProjectSchema = new SimpleSchema({
   },
   "author": {
     type: String,
-    label: "The ID of the author of this post.",
+    label: "The ID of the author of this post",
     autoValue() {
       let user = Meteor.users.findOne( { _id: this.userId } );
       if ( user ) {
@@ -34,12 +34,32 @@ let ProjectSchema = new SimpleSchema({
   },
   "projectDate": {
     type: String,
-    label: "The date this project began.",
+    label: "The date this project began",
+    autoValue() {
+      if ( this.isInsert ) {
+        return ( new Date() ).toISOString();
+      }
+    }
   },
   "name": {
     type: String,
-    label: "The name of this project.",
+    label: "The name of this project",
     defaultValue: "Unnamed Project"
+  },
+  "slug": {
+    type: String,
+    label: "Slug",
+    autoValue() {
+      let slug              = this.value,
+          existingSlugCount = Posts.find( { _id: { $ne: this.docId }, slug: new RegExp( slug ) } ).count(),
+          existingUntitled  = Posts.find( { slug: { $regex: /untitled-post/i } } ).count();
+
+      if ( slug ) {
+        return existingSlugCount > 0 ? `${ slug }-${ existingSlugCount + 1 }` : slug;
+      } else {
+        return existingUntitled > 0 ? `untitled-post-${ existingUntitled + 1 }` : 'untitled-post';
+      }
+    }
   },
   "description": {
     type: String,
@@ -48,12 +68,13 @@ let ProjectSchema = new SimpleSchema({
   },
   "tags": {
     type: [ String ],
-    label: "The tags for this portfolio item.",
+    label: "The tags for this portfolio item",
     optional: true
   },
   "images": {
     type: [ String ],
-    label: "The images associated with this project."
+    label: "The images associated with this project",
+    optional: true
   }
 });
 

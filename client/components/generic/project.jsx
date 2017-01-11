@@ -1,11 +1,11 @@
 Project = React.createClass({
-  getProjectTitle() {
+  getProjectName() {
     let project = this.props.project;
 
     if ( this.props.fullView ) {
-      return <h3>{ project.title }</h3>;
+      return <h3>{ project.name }</h3>;
     } else {
-      return <h3><a href={ `/portfolio/${ project._id }`}>{ project.title }</a></h3>;
+      return <h3><a href={ `/portfolio/${ project._id }`}>{ project.name }</a></h3>;
     }
   },
   getHTML( markdown ) {
@@ -16,10 +16,15 @@ Project = React.createClass({
   renderTags( tags ) {
     if ( tags ) {
       return <div className="tags">
-        {tags.map( ( tag ) => {
+        { tags.map( ( tag ) => {
           return <a className="tag" href={ `/tags/${ tag }` }>#{ tag }</a>;
         })}
       </div>;
+    }
+  },
+  getImages( images ) {
+    if ( this.props.fullView ) {
+
     }
   },
   render() {
@@ -27,10 +32,12 @@ Project = React.createClass({
         project              = this.props.project;
 
     return <div className="project">
-      { this.getProjectTitle() }
+      { this.getProjectName() }
       <p><strong>Project Date:</strong> { formatLastUpdate( project.projectDate ) }</p>
       { this.renderTags( project.tags ) }
-      //<div className="project-body" dangerouslySetInnerHTML={ this.getHTML( project.images ) } />
+      <div className="project-body" dangerouslySetInnerHTML={ this.getHTML( project.description ) } >
+        { this.getImages( project.images ) }
+      </div>
     </div>;
   }
 });

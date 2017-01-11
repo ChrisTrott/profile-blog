@@ -2,9 +2,9 @@ Portfolio = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {
     let query = {};
-    Meteor.subscribe( 'projectsList' );
+    Meteor.subscribe( 'projectsIndex' );
     return {
-      projects: Projects.find( query, { sort: { updated: -1 } } ).fetch()
+      projects: Projects.find( query, { sort: { projectDate: -1 } } ).fetch()
     };
   },
   renderProjects() {
