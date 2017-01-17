@@ -10,6 +10,8 @@ App = React.createClass({
           'blog',
           'about',
           'portfolio',
+          'project',
+          'projectTags',
           'singlePost',
           'tagIndex',
           'login',

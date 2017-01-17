@@ -12,6 +12,7 @@ let setupCSP = () => {
     // Analytics
     '*.google-analytics.com',
     '*.mxpnl.com',
+    'res.cloudinary.com'
   ];
 
   _.each(trusted, function(origin) {

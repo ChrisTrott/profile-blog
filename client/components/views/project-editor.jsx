@@ -36,7 +36,7 @@ ProjectEditor = React.createClass({
                 return string.trim();
               }),
               images: getValue( form, '[name="projectImages"]' ).split( ',' ).map( ( string ) => {
-                if (string.trim()) {
+                if ( string.trim() ) {
                   return string.trim();
                 }
               })

@@ -30,6 +30,20 @@ publicRoutes.route( '/portfolio', {
   }
 });
 
+publicRoutes.route( '/portfolio/:slug', {
+  name: 'project',
+  action( params ) {
+    ReactLayout.render( App, { yield: <SingleProject slug={ params.slug } /> } );
+  }
+});
+
+publicRoutes.route('/portfolio/tags/:tag', {
+  name: 'projectTags',
+  action( params ) {
+    ReactLayout.render( App, { yield: <Portfolio tag={ params.tag }/> } );
+  }
+});
+
 publicRoutes.route( '/blog/:slug', {
   name: 'singlePost',
   action( params ) {

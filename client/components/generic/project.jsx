@@ -1,30 +1,38 @@
 Project = React.createClass({
-  getProjectName() {
-    let project = this.props.project;
-
+  getProjectName( project ) {
     if ( this.props.fullView ) {
-      return <h3>{ project.name }</h3>;
+      return <h4>{ project.name }</h4>;
     } else {
-      return <h3><a href={ `/portfolio/${ project._id }`}>{ project.name }</a></h3>;
+      return <h4><a href={ `/portfolio/${ project.slug }`}>{ project.name }</a></h4>;
     }
   },
-  getHTML( markdown ) {
-    if ( markdown ) {
-      return { __html: parseMarkdown( markdown ) };
+  getHTML( description ) {
+    if ( description ) {
+      return { __html: parseMarkdown( description ) };
     }
   },
   renderTags( tags ) {
     if ( tags ) {
       return <div className="tags">
         { tags.map( ( tag ) => {
-          return <a className="tag" href={ `/tags/${ tag }` }>#{ tag }</a>;
+          return <a className="tag" href={ `/portfolio/tags/${ tag }` }>{ tag }</a>;
         })}
       </div>;
     }
   },
   getImages( images ) {
-    if ( this.props.fullView ) {
-
+    if ( images.length > 0 ) {
+      if ( this.props.fullView ) {
+        return images.map( ( image ) => {
+          return <img width="150" height="150" src={ image } />;
+        });
+      }
+      else {
+        return <img src={ images[0] } />;
+      }
+    }
+    else {
+      return <WarningAlert>No images found for this project.</WarningAlert>;
     }
   },
   render() {
@@ -32,12 +40,12 @@ Project = React.createClass({
         project              = this.props.project;
 
     return <div className="project">
-      { this.getProjectName() }
-      <p><strong>Project Date:</strong> { formatLastUpdate( project.projectDate ) }</p>
-      { this.renderTags( project.tags ) }
-      <div className="project-body" dangerouslySetInnerHTML={ this.getHTML( project.description ) } >
-        { this.getImages( project.images ) }
+        { this.getProjectName( project ) }
+        <div className="project-body" >
+          Project Date: { formatLastUpdate( project.projectDate ) }
+          { this.renderTags( project.tags ) }
+          { this.getImages( project.images ) }
+        </div>
       </div>
-    </div>;
   }
 });
