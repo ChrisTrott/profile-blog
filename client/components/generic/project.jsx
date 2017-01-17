@@ -20,15 +20,17 @@ Project = React.createClass({
       </div>;
     }
   },
-  getImages( images ) {
-    if ( images.length > 0 ) {
+  getImages( project ) {
+    if ( project.images.length > 0 ) {
       if ( this.props.fullView ) {
-        return images.map( ( image ) => {
-          return <img width="150" height="150" src={ image } />;
+        return project.images.map( ( image ) => {
+          if (image) {
+            var smallImage = image.replace("/upload/","/upload/c_scale,w_150/");
+            return <a href={ image } data-lightbox={ project.slug }>
+              <img src={ smallImage } />
+            </a>;
+          }
         });
-      }
-      else {
-        return <img src={ images[0] } />;
       }
     }
     else {
@@ -42,10 +44,10 @@ Project = React.createClass({
     return <div className="project">
         { this.getProjectName( project ) }
         <div className="project-body" >
-          Project Date: { formatLastUpdate( project.projectDate ) }
-          { this.renderTags( project.tags ) }
-          { this.getImages( project.images ) }
+          <span className="project-date">Project Date: { formatLastUpdate( project.projectDate ) }</span>
+          <div className="tags">{ this.renderTags( project.tags ) }</div>
+          <div className="images">{ this.getImages( project ) }</div>
         </div>
-      </div>
+      </div>;
   }
 });

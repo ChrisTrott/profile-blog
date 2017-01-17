@@ -4,17 +4,23 @@
 }
 
 .project {
+  margin-bottom: 50px;
   width: 600px;
+
   @media screen and (max-width: 700px) {
     width: 400px;
   }
 
-  margin-bottom: 50px;
+  .project-body {
+    .images {
+      display: flex;
+      flex-flow: row wrap;
 
-
-  .project-body .images {
-    display: flex;
-    flex-flow: column wrap;
+      a {
+        margin: 15px;
+        box-shadow: 2px 2px 1px #888888;
+      }
+    }
   }
 
   .tags {
@@ -37,5 +43,9 @@
   .tag:hover {
     background: $secondary-color;
     color: #fff;
+  }
+
+  .images img {
+
   }
 }
