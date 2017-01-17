@@ -15,7 +15,7 @@ Project = React.createClass({
     if ( tags ) {
       return <div className="tags">
         { tags.map( ( tag ) => {
-          return <a className="tag" href={ `/portfolio/tags/${ tag }` }>{ tag }</a>;
+          return <a className="tag" key={ tag } href={ `/portfolio/tags/${ tag }` }>{ tag }</a>;
         })}
       </div>;
     }
@@ -26,7 +26,7 @@ Project = React.createClass({
         return project.images.map( ( image ) => {
           if (image) {
             var smallImage = image.replace("/upload/","/upload/c_scale,w_150/");
-            return <a href={ image } data-lightbox={ project.slug }>
+            return <a href={ image } key={ image } data-lightbox={ project.slug }>
               <img src={ smallImage } />
             </a>;
           }
@@ -41,11 +41,12 @@ Project = React.createClass({
     let { formatLastUpdate } = ReactHelpers,
         project              = this.props.project;
 
-    return <div className="project">
+    return <div className="project" key={ project.slug }>
         { this.getProjectName( project ) }
         <div className="project-body" >
           <span className="project-date">Project Date: { formatLastUpdate( project.projectDate ) }</span>
           <div className="tags">{ this.renderTags( project.tags ) }</div>
+          <div className="description" dangerouslySetInnerHTML={ this.getHTML( project.description ) }></div>
           <div className="images">{ this.getImages( project ) }</div>
         </div>
       </div>;
