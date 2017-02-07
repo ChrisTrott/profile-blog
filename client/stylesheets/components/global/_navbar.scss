@@ -30,6 +30,10 @@
   border-bottom-color: $primary-color;
   border-bottom-style: solid;
   border-bottom-width: 5px;
+
+  a:focus {
+    background-color: $mid-font !important;
+  }
 }
 
 .navbar-toggle {

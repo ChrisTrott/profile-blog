@@ -22,6 +22,15 @@ let PostsSchema = new SimpleSchema({
       }
     }
   },
+  "featured": {
+    type: Boolean,
+    label: "Is this post featured on the home page?",
+    autoValue() {
+      if ( this.isInsert ) {
+        return false;
+      }
+    }
+  },
   "author": {
     type: String,
     label: "The ID of the author of this post.",
@@ -62,6 +71,11 @@ let PostsSchema = new SimpleSchema({
   "content": {
     type: String,
     label: "The content of this post.",
+    optional: true
+  },
+  "preview": {
+    type: String,
+    label: "The preview displayed in the post listing.",
     optional: true
   },
   "tags": {

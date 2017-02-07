@@ -29,8 +29,10 @@ Editor = React.createClass({
               _id: component.props.post,
               title: getValue( form, '[name="postTitle"]' ),
               slug: getValue( form, '[name="postSlug"]' ),
+              preview: getValue( form, '[name="postPreview"]' ),
               content: getValue( form, '[name="postContent"]' ),
               published: isChecked( form, '[name="postPublished"]' ),
+              featured: isChecked( form, '[name="postFeatured"]' ),
               tags: getValue( form, '[name="postTags"]' ).split( ',' ).map( ( string ) => {
                 return string.trim();
               })
@@ -92,6 +94,15 @@ Editor = React.createClass({
           </FormGroup>
           <FormGroup>
             <FormControl
+              style="checkbox"
+              name="postFeatured"
+              id="#post-featured"
+              label="Featured?"
+              defaultValue={ this.data.post && this.data.post.featured }
+            />
+          </FormGroup>
+          <FormGroup>
+            <FormControl
               showLabel={ false }
               style="input"
               type="text"
@@ -110,6 +121,15 @@ Editor = React.createClass({
               name="postSlug"
               label="Slug"
               defaultValue={ this.data.post && this.data.post.slug }
+            />
+          </FormGroup>
+          <FormGroup>
+            <FormControl
+              showLabel={ false }
+              style="textarea"
+              name="postPreview"
+              label="Preview"
+              defaultValue={ this.data.post && this.data.post.preview }
             />
           </FormGroup>
           <FormGroup>

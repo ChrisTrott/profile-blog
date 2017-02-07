@@ -22,6 +22,15 @@ let ProjectSchema = new SimpleSchema({
       }
     }
   },
+  "featured": {
+    type: Boolean,
+    label: "Is this project featured on the Home page?",
+    autoValue() {
+      if ( this.isInsert ) {
+        return false;
+      }
+    }
+  },
   "author": {
     type: String,
     label: "The ID of the author of this post",

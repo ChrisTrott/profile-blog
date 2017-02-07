@@ -15,7 +15,15 @@
       height: 150px;
       line-height: 150px;
       text-align: center;
+
+      transition: transform 1.5s ease-in-out;
+      -webkit-transition: transform 1.5s ease-in-out;
     }
+  }
+
+  .post-date:active {
+    transform: rotateY(1080deg);
+    -webkit-transform: rotateY(1080deg);
   }
 
   .post-author {
@@ -69,10 +77,16 @@
     border-radius: 3px;
     padding: 2px 6px;
     text-decoration: none;
+
+    -webkit-transition: -webkit-transform 100ms ease-in;
+    transition: transform 100ms ease-in;
   }
 
   .tag:hover {
     background: $secondary-color;
     color: #fff;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+
   }
 }

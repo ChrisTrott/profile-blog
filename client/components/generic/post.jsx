@@ -22,16 +22,29 @@ Post = React.createClass({
       </div>;
     }
   },
+  renderPostContent(displayMode, post) {
+    if (displayMode == "preview") {
+      return (
+        <div className="post-preview">
+          <div className="post-body" dangerouslySetInnerHTML={ this.getHTML( post.preview ) } />
+          <div className="post-preview-link"><a href={`/blog/${post.slug}`}>Read More...</a></div>
+        </div>
+      );
+    } else {
+      return <div className="post-body" dangerouslySetInnerHTML={ this.getHTML( post.content ) } />;
+    }
+  },
   render() {
     let { formatLastUpdate } = ReactHelpers,
-        post                 = this.props.post;
+        post                 = this.props.post,
+        displayMode          = this.props.displayMode;
 
     return <div className="post panel panel-primary">
       { this.getPostTitle() }
       <div className="panel-body">
         <span className="post-date">{ formatLastUpdate( post.updated ) }</span><span className="post-author"> by { post.author }</span>
         { this.renderTags( post.tags ) }
-        <div className="post-body" dangerouslySetInnerHTML={ this.getHTML( post.content ) } />
+        { this.renderPostContent(displayMode, post) }
       </div>
     </div>;
   }

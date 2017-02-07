@@ -28,6 +28,7 @@ ProjectEditor = React.createClass({
             project = {
               _id: component.props.project,
               published: isChecked( form, '[name="projectPublished"]' ),
+              featured: isChecked( form, '[name="projectFeatured"]' ),
               projectDate: getValue( form, '[name="projectDate"]'),
               name: getValue( form, '[name="projectName"]'),
               slug: getValue( form, '[name="projectSlug"]' ),
@@ -94,6 +95,15 @@ ProjectEditor = React.createClass({
               id="#project-published"
               label="Published?"
               defaultValue={ this.data.project && this.data.project.published }
+            />
+          </FormGroup>
+          <FormGroup>
+            <FormControl
+              style="checkbox"
+              name="projectFeatured"
+              id="#project-featured"
+              label="Featured?"
+              defaultValue={ this.data.project && this.data.project.featured }
             />
           </FormGroup>
           <FormGroup>
