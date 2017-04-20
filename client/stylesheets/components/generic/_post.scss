@@ -6,19 +6,24 @@
 
   .post-date {
     @media screen and (min-width: 700px) {
-      position: absolute;
-      left: -25%;
-      font-size: 24px;
+      display: block;
+      position: relative;
+      float: left;
+      font-size: 16px;
       background-color: $primary-color;
-      border-radius: 75px;
-      width: 150px;
-      height: 150px;
-      line-height: 150px;
+      border-radius: 50px;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
       text-align: center;
-
-      transition: transform 1.5s ease-in-out;
-      -webkit-transition: transform 1.5s ease-in-out;
+      margin-right: 5px;
     }
+  }
+
+  .post-author {
+    float: right;
+    font-size: 16px;
+    margin-top: 15px;
   }
 
   .post-date:active {

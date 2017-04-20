@@ -14,7 +14,7 @@ PublicNavigation = React.createClass({
             uid: 'stackoverflow', href: 'https://stackoverflow.com/users/1881027/viokyma', class: 'fa fa-stack-overflow', label: ''
           },
           {
-            uid: 'github', href: 'https://github.com/VioKyma', class: 'fa fa-github', label: ''
+            uid: 'github', href: 'https://github.com/ChrisTrott', class: 'fa fa-github', label: ''
           }
         ],
         left: [

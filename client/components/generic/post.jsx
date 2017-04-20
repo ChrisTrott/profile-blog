@@ -40,10 +40,13 @@ Post = React.createClass({
         displayMode          = this.props.displayMode;
 
     return <div className="post panel panel-primary">
-      { this.getPostTitle() }
       <div className="panel-body">
-        <span className="post-date">{ formatLastUpdate( post.updated ) }</span><span className="post-author"> by { post.author }</span>
-        { this.renderTags( post.tags ) }
+        <div className="post-head-info">
+          <span className="post-date">{ formatLastUpdate( post.updated ) }</span>
+          { this.getPostTitle() }
+          <span className="post-author"> by { post.author }</span>
+          { this.renderTags( post.tags ) }
+        </div>
         { this.renderPostContent(displayMode, post) }
       </div>
     </div>;

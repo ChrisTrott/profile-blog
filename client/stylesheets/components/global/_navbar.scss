@@ -4,6 +4,7 @@
 
   .active {
     background-color: $mid-font;
+    transition: background-color 50ms ease-in-out 50ms;
   }
 
   a, .fa {
