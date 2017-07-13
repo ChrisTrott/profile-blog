@@ -17,7 +17,7 @@ PostsIndex = React.createClass({
   renderPosts() {
     if ( this.data.posts.length > 0 ) {
       return this.data.posts.map( ( post ) => {
-        return <Post key={ post._id } post={ post } />;
+        return <Post key={ post._id } post={ post } displayMode="preview" />;
       });
     } else {
       return <WarningAlert>No posts found.</WarningAlert>;

@@ -1,3 +1,5 @@
+var ReactDisqusThread = require('react-disqus-thread');
+
 Post = React.createClass({
   getPostTitle() {
     let post = this.props.post;
@@ -17,7 +19,7 @@ Post = React.createClass({
     if ( tags ) {
       return <div className="tags">
         {tags.map( ( tag ) => {
-          return <a className="tag" href={ `/tags/${ tag }` }>{ tag }</a>;
+          return <a key={ tag } className="tag" href={ `/tags/${ tag }` }>{ tag }</a>;
         })}
       </div>;
     }
@@ -31,7 +33,24 @@ Post = React.createClass({
         </div>
       );
     } else {
-      return <div className="post-body" dangerouslySetInnerHTML={ this.getHTML( post.content ) } />;
+      if(post.slug != null) {
+        console.log(post.slug);
+        return (
+          <div className="post-content">
+            <div className="post-body" dangerouslySetInnerHTML={ this.getHTML( post.content ) } />;
+            <div className="post-comments">
+              <ReactDisqusThread
+                shortname={ post.slug }
+                identifier={ post.slug }
+                title={ post.title }
+                url={ `https://www.christrott.com.au/blog/${post.slug}` }
+                />
+            </div>
+          </div>
+        );
+      } else {
+        return (<div className="post-content"></div>);
+      }
     }
   },
   render() {
