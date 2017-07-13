@@ -40,7 +40,7 @@ Post = React.createClass({
             <div className="post-body" dangerouslySetInnerHTML={ this.getHTML( post.content ) } />;
             <div className="post-comments">
               <ReactDisqusThread
-                shortname={ post.slug }
+                shortname="christrott"
                 identifier={ post.slug }
                 title={ post.title }
                 url={ `https://www.christrott.com.au/blog/${post.slug}` }
