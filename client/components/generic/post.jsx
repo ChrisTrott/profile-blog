@@ -28,16 +28,21 @@ Post = React.createClass({
     if (displayMode == "preview") {
       return (
         <div className="post-preview">
-          <div className="post-body" dangerouslySetInnerHTML={ this.getHTML( post.preview ) } />
-          <div className="post-preview-link"><a href={`/blog/${post.slug}`}>Read More...</a></div>
+          <div
+            className="post-body"
+            dangerouslySetInnerHTML={ this.getHTML( post.preview ) } />
+          <div className="post-preview-link">
+            <a href={`/blog/${post.slug}`}>Read More...</a>
+          </div>
         </div>
-      );
+      )
     } else {
       if(post.slug != null) {
-        console.log(post.slug);
         return (
           <div className="post-content">
-            <div className="post-body" dangerouslySetInnerHTML={ this.getHTML( post.content ) } />;
+            <div
+              className="post-body"
+              dangerouslySetInnerHTML={ this.getHTML( post.content ) } />
             <div className="post-comments">
               <ReactDisqusThread
                 shortname="christrott"
@@ -47,7 +52,7 @@ Post = React.createClass({
                 />
             </div>
           </div>
-        );
+        )
       } else {
         return (<div className="post-content"></div>);
       }

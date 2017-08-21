@@ -85,6 +85,15 @@ Editor = React.createClass({
           </p>
           <FormGroup>
             <FormControl
+              style="input"
+              name="postUpdated"
+              id="#post-updated"
+              label="Updated Date"
+              defaultValue={ this.data.post && this.data.post.updated }
+            />
+          </FormGroup>
+          <FormGroup>
+            <FormControl
               style="checkbox"
               name="postPublished"
               id="#post-published"

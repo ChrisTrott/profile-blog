@@ -45,8 +45,12 @@ let PostsSchema = new SimpleSchema({
     type: String,
     label: "The date this post was last updated on.",
     autoValue() {
-      return ( new Date() ).toISOString();
-    }
+      let updated = this.value;
+      if ( this.isInsert ) {
+        return ( new Date() ).toISOString();
+      }
+    },
+    optional: true
   },
   "title": {
     type: String,

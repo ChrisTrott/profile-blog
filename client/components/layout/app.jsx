@@ -33,12 +33,10 @@ App = React.createClass({
     } else {
       return <Jumbotron className="blog-header">
           <h4>
-            Hi, I'm Chris Trott! I'm an experienced Web Developer with skills across a
-            variety of technologies and frameworks.
+            I'm a Software Developer focused on the user. I'm experienced with C# and JavaScript.
           </h4>
           <h4>
-            I enjoy teaching people about technology, and love producing
-            beautiful software that improves people's lives.
+            In this blog, I write on JavaScript, Web Apps, Games, and how all of those things relate to the people that use them.
           </h4>
       </Jumbotron>;
     }

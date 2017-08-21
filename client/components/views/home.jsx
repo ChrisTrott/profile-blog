@@ -14,19 +14,27 @@ Home = React.createClass({
   renderBlogFeature() {
     if ( this.data.posts.length > 0 ) {
       return this.data.posts.map( ( post ) => {
-        return <Post key={ post._id } post={ post } displayMode="preview" />;
+        return <Post
+          key={ post._id }
+          post={ post }
+          displayMode="preview" />;
       });
     } else {
-      return <WarningAlert>No featured blog posts.</WarningAlert>;
+      return <WarningAlert>Loading featured blog posts...</WarningAlert>;
     }
   },
   renderPortfolioFeature() {
     if ( this.data.projects.length > 0 ) {
       return this.data.projects.map( ( project ) => {
-        return <Project key={ project._id } project={ project } fullView='false' />;
+        return <Project
+          key={ project._id }
+          project={ project }
+          fullView='false' />;
       });
     } else {
-      return <WarningAlert>No featured projects yet! Check back soon.</WarningAlert>;
+      return <WarningAlert>
+        Loading featured projects...
+      </WarningAlert>;
     }
   },
   render() {
